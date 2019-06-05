@@ -21,7 +21,7 @@ public class BookRepositoryTest {
 
     @Test
     public void insert() {
-        int count = bookRepository.insert("java核心思想");
+        int count = bookRepository.insert("java核心思想", 100);
         System.out.println(count);
     }
 }

@@ -11,11 +11,11 @@
 <!--        &lt;!&ndash; 每次执行插件生成的 xml 时通用的方法会覆盖的 &ndash;&gt;-->
 <!--        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>-->
 <!--        &lt;!&ndash; 从数据库中的字段的comment做为生成entity的属性注释 &ndash;&gt;-->
-<!--        <commentGenerator type="com.meituan.mdp.mybatis.generator.internal.RemarksCommentGenerator">-->
-<!--            <property name="suppressAllComments" value="true"/>-->
-<!--            <property name="suppressDate" value="true"/>-->
-<!--            <property name="addRemarkComments" value="true"/>-->
-<!--        </commentGenerator>-->
+        <commentGenerator type="com.meituan.mdp.mybatis.generator.internal.RemarksCommentGenerator">
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
+        </commentGenerator>
 
         <!--使用前替换数据库名,账号密码-->
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
@@ -33,7 +33,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mappers"  targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="mappers"  targetProject="src/main/resources">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
@@ -46,7 +46,9 @@
         </table>
         <table tableName="user" domainObjectName="UserDO">
         </table>
-        <table tableName="order" domainObjectName="OrderDO">
+        <table tableName="orderA" domainObjectName="OrderDO">
+        </table>
+        <table tableName="bookstore" domainObjectName="BookStoreDO">
         </table>
 
     </context>

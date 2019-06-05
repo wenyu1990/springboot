@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="goods" targetRuntime="MyBatis3">
+        <!-- 生成的entity实体引入lombok注解 Getter,Setter,Builder -->
+        <plugin type="com.meituan.mdp.mybatis.generator.plugins.LombokPlugin"/>
+<!--        &lt;!&ndash; 每次执行插件生成的 xml 时通用的方法会覆盖的 &ndash;&gt;-->
+<!--        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>-->
+<!--        &lt;!&ndash; 从数据库中的字段的comment做为生成entity的属性注释 &ndash;&gt;-->
+<!--        <commentGenerator type="com.meituan.mdp.mybatis.generator.internal.RemarksCommentGenerator">-->
+<!--            <property name="suppressAllComments" value="true"/>-->
+<!--            <property name="suppressDate" value="true"/>-->
+<!--            <property name="addRemarkComments" value="true"/>-->
+<!--        </commentGenerator>-->
+
+        <!--使用前替换数据库名,账号密码-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=UTF8&amp;socketTimeout=60000&amp;allowMultiQueries=true"
+                        userId="root"
+                        password="12345678">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.meituan.mysqllesson.domain.dos" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mappers"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.meituan.mysqllesson.infrastructure.repository.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--配置需要生成的表-->
+        <table tableName="book" domainObjectName="BookDO">
+        </table>
+        <table tableName="user" domainObjectName="UserDO">
+        </table>
+        <table tableName="order" domainObjectName="OrderDO">
+        </table>
+
+    </context>
+
+</generatorConfiguration>

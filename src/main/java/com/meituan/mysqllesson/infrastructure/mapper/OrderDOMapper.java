@@ -1,4 +1,4 @@
-package com.meituan.mysqllesson.infrastructure.repository.mapper;
+package com.meituan.mysqllesson.infrastructure.mapper;
 
 import com.meituan.mysqllesson.domain.dos.OrderDO;
 import com.meituan.mysqllesson.domain.dos.OrderDOExample;

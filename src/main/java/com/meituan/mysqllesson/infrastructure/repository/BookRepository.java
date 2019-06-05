@@ -1,4 +1,4 @@
-package com.meituan.mysqllesson.infrastructure.repository.repository;
+package com.meituan.mysqllesson.infrastructure.repository;
 
 import com.meituan.mysqllesson.domain.dos.BookDO;
 import com.meituan.mysqllesson.domain.dos.BookDOExample;
